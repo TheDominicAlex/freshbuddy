@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Buddy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modal-style.css">
+    <link rel="stylesheet" href="card.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.43.4/dist/umd/supabase.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>Fresh Buddy</h1>
+        <div class="logo">
+            <span class="icon icon-fridge"></span>
+            <span class="icon icon-calendar"></span>
+        </div>
+    </header>
+
+    <!-- Food Items -->
+    <div class="food-list" id="food-list"></div>
+
+    <!-- Add Food Button -->
+    <button id="openModalBtn" class="open-modal-btn">Add Food</button>
+    <!-- The Modal -->
+    <div id="itemModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="back-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                <h2>Adding items</h2>
+                <button class="close-btn" id="closeModalBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <input type="file" id="fileInput" accept="image/*" capture="environment" style="display: none;" />
+                <div class="image-upload">
+                    <div class="image-placeholder" onclick="getImageUrl()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </div>
+                    <button class="edit-image-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 20h9"></path>
+                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <form id="addItemForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Apple">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <div class="quantity-input">
+                            <input type="number" id="quantity" value="5" min="1">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="expiryDate">Expiry Date</label>
+                        <input type="date" id="expiryDate" placeholder="14/05/2025">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="category">Category</label>
+
+                        <select name="category" id="category">
+                        <option value="fruit">Fruit</option>
+                        <option value="drink">Drink</option>
+                        <option value="food">Food</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">Extra notes</label>
+                        <textarea id="notes" placeholder="Bought from Jaya" rows="4" cols="68">
+
+                        </textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Add new item</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

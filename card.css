@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+  }
+  
+  .card {
+    display: flex;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 500px;
+    margin-bottom: 20px;
+  }
+  
+  .food-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 16px;
+  }
+  
+  .card-content {
+    flex: 1;
+    padding: 16px;
+  }
+  
+  h2 {
+    margin: 0 0 6px;
+  }
+  
+  .expiry {
+    margin: 0;
+    font-weight: 500;
+  }
+  
+  .highlight {
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  .note {
+    color: #888;
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  
+  .tags {
+    margin: 12px 0;
+  }
+  
+  .tag {
+    display: inline-block;
+    background: #eee;
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin-right: 8px;
+    font-size: 14px;
+  }
+  
+  .red {
+    background: #fcdcdc;
+    color: #a94442;
+  }
+  
+  .gray {
+    background: #f1f1f1;
+    color: #444;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .delete-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .edit-btn {
+    background: #2ecc71;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .delete-btn:hover,
+  .edit-btn:hover {
+    opacity: 0.9;
+  }
+  
